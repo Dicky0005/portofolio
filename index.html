@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Dicky Candra</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+        }
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            color: #FFA500;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            margin: 1rem 0 0 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        nav ul li a:hover {
+            color: #FFA500;
+        }
+        .hero {
+            text-align: center;
+            padding: 5rem 0;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+        }
+        .hero p {
+            font-size: 1.5rem;
+        }
+        .hero .buttons {
+            margin-top: 2rem;
+        }
+        .hero .buttons a {
+            margin: 0 1rem;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            font-size: 1.2rem;
+        }
+        .hero .hire-me {
+            background-color: #FFA500;
+            color: #000;
+        }
+        .hero .my-works {
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid #FFA500;
+        }
+        .hero .my-works:hover {
+            background-color: #FFA500;
+            color: #000;
+        }
+        section {
+            padding: 2rem;
+            background-color: rgba(0, 0, 0, 0.9);
+            margin: 1rem auto;
+            width: 80%;
+            max-width: 800px;
+            border-radius: 10px;
+            color: #fff;
+        }
+        section h2 {
+            margin-top: 0;
+            font-size: 2.5rem;
+        }
+        .profile-picture {
+            display: block;
+            margin: 0 auto 1rem;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid #333;
+        }
+        .project {
+            background-color: #333;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+        }
+        .project h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+        .project a {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.5rem 1rem;
+            background-color: #FFA500;
+            color: #000;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .project a:hover {
+            background-color: #FFD700;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #000;
+            color: #fff;
+        }
+        .download-cv {
+            display: block;
+            width: 200px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background-color: #FFA500;
+            color: #000;
+            text-align: center;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+        .download-cv:hover {
+            background-color: #FFD700;
+        }
+        .contact-info {
+            list-style: none;
+            padding: 0;
+        }
+        .contact-info li {
+            padding: 0.5rem 0;
+            font-size: 1.2rem;
+        }
+        .about-info {
+            list-style: none;
+            padding: 0,9px;
+            font-size: 1.2rem;
+        }
+        .about-info li {
+            padding: 0.5rem 0;
+        }
+        .about-info span {
+            font-weight: bold;
+        }
+        .about-info h3 {
+            margin-top: 0;
+            font-size: 2.5rem;
+            color: #fff;
+        }
+        .services {
+            padding: 50px 0;
+            text-align: center;
+        }
+        .services .service-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .services .service-item {
+            width: 300px;
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .services .service-item h3 {
+            color: #FFA500;
+            margin-bottom: 10px;
+        }
+        .services .service-item p {
+            color: #fff;
+            font-size: 1.1rem;
+        }
+        .skills {
+            background-color: #000;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        .skills h2 {
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            color: #FFA500;
+        }
+        .skills .skill-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 1rem 0;
+        }
+        .skills .skill-bar .skill-name {
+            flex: 1;
+            font-size: 1.2rem;
+        }
+        .skills .skill-bar .skill-percentage {
+            flex: 1;
+            text-align: right;
+            font-size: 1.2rem;
+        }
+        .skills .skill-bar .skill-bar-wrapper {
+            flex: 4;
+            background-color: #333;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .skills .skill-bar .skill-bar-wrapper .skill-bar-fill {
+            display: block;
+            height: 20px;
+            background-color: #FFA500;
+            border-radius: 10px 0 0 10px;
+        }
+        .projects-section {
+            padding: 50px 0;
+            text-align: center;
+        }
+        .project-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .project-item {
+            position: relative;
+            width: 300px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .project-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .project-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dicky Candra Butar-Butar</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#cv">CV</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#skills">Skills</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Halo saya Dicky Candra</h1>
+        <p>Yang membuat Website ini</p>
+        <div class="buttons">
+            <a href="#contact" class="hire-me">Kontak</a>
+            <a href="#projects" class="my-works">Pekerjaan</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <img src="gambar1.png" alt="Profile Picture" class="profile-picture">
+        <p>Seorang mahasiswa yang bersemangat dan berorientasi pada pencapaian dengan keinginan yang kuat untuk belajar dan berkembang. Saya berharap untuk mendapatkan pengalaman dalam terkait studi yang saya ambil agar dapat meningkatkan keterampilan dan pengetahuan saya.</p>
+        <ul class="about-info">
+            <li><span>Name:</span> Dicky Candra Butar-Butar</li>
+            <li><span>Date of Birth:</span> Pekanbaru, 05 Februari 2004</li>
+            <li><span>Gender:</span> PRIA </li>
+            <li><span>Phone:</span> +62 813-4253-8363</li>
+            <li><span>Email:</span> dickycandara9@gmail.com</li>
+            <li><span>Address:</span> Kp. Kampar Rt/Rw 19/09 Desa Karya Indah, Kec. Tapung, Prov. Riau</li>
+            <li><span>WhatsApp:</span> <a href="https://wa.me/+6281342538363" target="_blank">Dicky Candra</a></li>
+
+        </ul>
+    </section>
+
+    <section class="skills" id="skills">
+        <h2>Skills</h2>
+        <div class="skill-bar">
+            <div class="skill-name">HTML</div>
+            <div class="skill-bar-wrapper">
+                <div class="skill-bar-fill" style="width: 80%;"></div>
+            </div>
+            <div class="skill-percentage">80%</div>
+        </div>
+        <div class="skill-bar">
+            <div class="skill-name">CSS</div>
+            <div class="skill-bar-wrapper">
+                <div class="skill-bar-fill" style="width: 75%;"></div>
+            </div>
+            <div class="skill-percentage">75%</div>
+        </div>
+        <div class="skill-bar">
+            <div class="skill-name">JavaScript</div>
+            <div class="skill-bar-wrapper">
+                <div class="skill-bar-fill" style="width: 65%;"></div>
+            </div>
+            <div class="skill-percentage">65%</div>
+        </div>
+        <div class="skill-bar">
+            <div class="skill-name">Java</div>
+            <div class="skill-bar-wrapper">
+                <div class="skill-bar-fill" style="width: 70%;"></div>
+            </div>
+            <div class="skill-percentage">70%</div>
+        </div>
+        <div class="skill-bar">
+            <div class="skill-name">Python</div>
+            <div class="skill-bar-wrapper">
+                <div class="skill-bar-fill" style="width: 60%;"></div>
+            </div>
+            <div class="skill-percentage">60%</div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Services</h2>
+        <div class="service-grid">
+            <div class="service-item">
+                <h3>Web Development</h3>
+                <p>Membuat dan mengembangkan website sesuai kebutuhan Anda.</p>
+            </div>
+            <div class="service-item">
+                <h3>UI/UX Design</h3>
+                <p>Merancang antarmuka dan pengalaman pengguna yang menarik.</p>
+            </div>
+            <div class="service-item">
+                <h3>SEO Optimization</h3>
+                <p>Meningkatkan visibilitas website Anda di mesin pencari.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <h2>Projects</h2>
+        <div class="project-grid">
+            <div class="project-item">
+                <img src="p3.jpg" alt="Project 1">
+                <div class="project-info">
+                    <h3>Project 1</h3>
+                    <p>Deskripsi proyek 1.</p>
+                    <a href="#">Lihat Detail</a>
+                </div>
+            </div>
+            <div class="project-item">
+                <img src="p1.jpg" alt="Project 2">
+                <div class="project-info">
+                    <h3>Project 2</h3>
+                    <p>Deskripsi proyek 2.</p>
+                    <a href="#">Lihat Detail</a>
+                </div>
+            </div>
+            <div class="project-item">
+                <img src="p2.webp" alt="Project 3">
+                <div class="project-info">
+                    <h3>Project 3</h3>
+                    <p>Deskripsi proyek 3.</p>
+                    <a href="#">Lihat Detail</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cv">
+        <h2>Download CV</h2>
+        <a href="CV Dicky candra.pdf" class="download-cv" target="_blank">Download My CV</a>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <ul class="contact-info">
+             <li><span>Phone:</span> +62 813-4253-8363</li>
+            <li><span>Email:</span> dickycandara9@gmail.com</li>
+            <li><span>Address:</span> Kp. Kampar Rt/Rw 19/09 Desa Karya Indah, Kec. Tapung, Prov. Riau</li>
+            <li><span>WhatsApp:</span> <a href="https://wa.me/+6281342538363" target="_blank">Dicky Candra</a></li>
+
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Dicky Candra. All rights reserved.</p>
+    </footer>
+</body>
+</html>
